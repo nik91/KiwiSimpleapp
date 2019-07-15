@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activity.MainActivity">
+
+    <TextView
+        android:id="@+id/flights_offers_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        android:text="@string/flight_offers" />
+
+    <androidx.viewpager.widget.ViewPager
+        android:id="@+id/flights_details_view_pager"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/flights_details_images_spring_dots_indicator_scroll"
+        android:layout_below="@+id/flights_offers_title"
+        android:layout_centerVertical="true" />
+
+    <HorizontalScrollView
+        android:id="@+id/flights_details_images_spring_dots_indicator_scroll"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentStart="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layoutDirection="ltr"
+        android:paddingStart="8dp"
+        android:paddingEnd="8dp">
+
+        <com.tbuonomo.viewpagerdotsindicator.SpringDotsIndicator
+            android:id="@+id/flights_details_spring_dots_indicator"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginStart="0dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="0dp"
+            android:layout_marginBottom="16dp"
+            app:dampingRatio="1"
+            app:dotsColor="@android:color/holo_blue_dark"
+            app:dotsCornerRadius="10dp"
+            app:dotsSize="15dp"
+            app:dotsSpacing="6dp"
+            app:dotsStrokeColor="@android:color/darker_gray"
+            app:dotsStrokeWidth="2dp"
+            app:stiffness="300" />
+    </HorizontalScrollView>
+
+    <ProgressBar
+        android:id="@+id/flights_offers_progress_bar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true" />
+
+</RelativeLayout>
